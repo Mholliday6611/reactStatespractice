@@ -39,7 +39,7 @@ componentDidUpdate(){
 
   render() {
     const comments = this.props.comments.map( (item, index) => <OneComment key={index} comment={item}/>)
-    const newComments = this.state.newComments.map( (item, index) => <OneComment key={index} comment={item}/>)
+    const newComments = this.state.newComments.map( (item, index) => <OneComment key={index} newcomment={item}/>)
 
     return (
       <div>
@@ -50,11 +50,12 @@ componentDidUpdate(){
           <button onClick={this.handleClick} > Add Comment </button>
         </form>
         <div className="wrap">
-          {comments}
-          </div>
-          <div className="wrap">
           {newComments}
           </div>
+        <div className="wrap">
+          {comments}
+          </div>
+          
       </div>
     );
   }
